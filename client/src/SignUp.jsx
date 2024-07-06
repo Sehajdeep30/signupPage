@@ -118,7 +118,7 @@ function SignUp() {
           <TryAgain />
         </form>
       </div>
-      <Link to="/login">Already Have an account? Login then.</Link>
+      <Link to="/">Already Have an account? Login then.</Link>
       <br />
     </>
   );

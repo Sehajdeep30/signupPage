@@ -12,13 +12,13 @@ function Login() {
     axios.defaults.withCredentials = true;
     e.preventDefault();
     axios
-      .post("signup-page-api2.vercel.app/login", { email, password })
+      .post("signup-page-api2.vercel.app", { email, password })
       .then((response) => {
         if (response.data == "Success") {
           navigate("/home");
         } else {
           setAuthentication(response.data);
-          navigate("/login");
+          navigate("/");
         }
       })
       .catch((e) => console.log("error is:", e));
