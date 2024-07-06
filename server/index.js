@@ -7,9 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(cors(
   {
-    origin: ["https://signup-page-brown.vercel.app"],
+    origin: 'https://signup-page-brown.vercel.app', // Frontend URL
     methods: ["POST","GET"],
-    credentials : true
+    credentials : true,
+    optionsSuccessStatus: 200
   }
 ));
 mongoose.connect("mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj");
