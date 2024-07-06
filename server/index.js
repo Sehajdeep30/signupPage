@@ -5,9 +5,15 @@ const UserModel = require("./models/Users");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["POST","GET"],
+    credentials : true
+  }
+));
 
-mongoose.connect("mongodb://127.0.0.1:27017/posthub");
+mongoose.connect("mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj");
 
 app.post("/register", (req, res) => {
   UserModel.create(req.body)
