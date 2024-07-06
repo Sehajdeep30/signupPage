@@ -15,36 +15,17 @@ app.use(
   })
 );
 mongoose.connect(
-  "mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj"
+  "mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj",
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 app.post("/register", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  ); // If needed
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  ); // If needed
-  res.setHeader("Access-Control-Allow-Credentials", true);
   UserModel.create(req.body)
     .then((Users) => res.json(Users))
     .catch((err) => res.json(err));
 });
 
 app.post("/login", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  ); // If needed
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With,content-type"
-  ); // If needed
-  res.setHeader("Access-Control-Allow-Credentials", true);
   const { email, password } = req.body;
   UserModel.findOne({ email: email })
     .then((user) => {
