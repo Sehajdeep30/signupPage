@@ -16,7 +16,7 @@ function SignUp() {
       axios.defaults.withCredentials = true;
       e.preventDefault();
       axios
-        .post("signup-page-api2.vercel.app/register", { name, num, email, password })
+        .post("https://signup-page-api2.vercel.app/register", { name, num, email, password })
         .then(() => {
           console.log("Post Successful");
           navigate("/signedup");
