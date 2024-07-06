@@ -8,11 +8,10 @@ import Home from "./Home";
 function App() {
   return (
     <>
-      <Navigate to="/login" />
       <BrowserRouter>
         <Routes>
           <Route path="/register" element={<SignUp />}></Route>
-          <Route path="/login" element={<Login />}></Route>
+          <Route path="" element={<Login />}></Route>
           <Route path="/signedup" element={<SignedUp />}></Route>
           <Route path="/home" element={<Home />}></Route>
         </Routes>
