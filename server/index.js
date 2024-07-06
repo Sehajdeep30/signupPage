@@ -15,7 +15,7 @@ app.use(
   })
 );
 mongoose.connect(
-  "mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj",
+  "mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
