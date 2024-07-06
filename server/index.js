@@ -12,7 +12,6 @@ app.use(cors(
     credentials : true
   }
 ));
-
 mongoose.connect("mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj");
 
 app.post("/register", (req, res) => {
