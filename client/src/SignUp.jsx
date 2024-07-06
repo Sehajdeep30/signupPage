@@ -13,9 +13,10 @@ function SignUp() {
 
   const submitHandle = (e) => {
     if (isPasswordConfirmed) {
+      axios.defaults.withCredentials = true;
       e.preventDefault();
       axios
-        .post("http://localhost:3000/register", { name, num, email, password })
+        .post("signup-page-api2.vercel.app/register", { name, num, email, password })
         .then(() => {
           console.log("Post Successful");
           navigate("/signedup");

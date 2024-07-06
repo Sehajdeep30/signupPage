@@ -9,9 +9,10 @@ function Login() {
   const navigate = useNavigate();
 
   const submitHandle = (e) => {
+    axios.defaults.withCredentials = true;
     e.preventDefault();
     axios
-      .post("http://localhost:3000/login", { email, password })
+      .post("signup-page-api2.vercel.app/login", { email, password })
       .then((response) => {
         if (response.data == "Success") {
           navigate("/home");
