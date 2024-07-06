@@ -10,7 +10,9 @@ app.use(cors(
     origin: 'https://signup-page-brown.vercel.app', // Frontend URL
     methods: ["POST","GET"],
     credentials : true,
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    allowedHeaders: ['Content-Type', 'Authorization']
+
   }
 ));
 mongoose.connect("mongodb+srv://Sehajdeep:rDhz7zUPr0@sehaj.lu7b4qy.mongodb.net/?retryWrites=true&w=majority&appName=Sehaj");
