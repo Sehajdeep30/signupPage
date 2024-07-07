@@ -22,9 +22,14 @@ function SignUp() {
           email,
           password,
         })
-        .then(() => {
+        .then((response) => {
           console.log("Post Successful");
-          navigate("/signedup");
+          if (response != "Account Already Exists") {
+            navigate("/signedup");
+          }
+          else{
+            navigate("/signup")
+          }
         })
         .catch((e) => {
           console.log("error is:", e);
@@ -50,74 +55,70 @@ function SignUp() {
     <>
       <div className="wrapper">
         <h2>Register Page</h2>
-          <form onSubmit={submitHandle}>
-            <div className="input-box">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name:"
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
+        <form onSubmit={submitHandle}>
+          <div className="input-box">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name:"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
 
-            <div className="input-box">
-              <input
-                type="text"
-                pattern="\d*"
-                maxLength="10"
-                minLength="10"
-                placeholder="Enter your mobile number:"
-                onChange={(e) => setNum(e.target.value)}
-                required
-              />
-            </div>
+          <div className="input-box">
+            <input
+              type="text"
+              pattern="\d*"
+              maxLength="10"
+              minLength="10"
+              placeholder="Enter your mobile number:"
+              onChange={(e) => setNum(e.target.value)}
+              required
+            />
+          </div>
 
-            <div className="input-box">
-              <input
-                placeholder="Enter your email id:"
-                type="email"
-                name="email"
-                id="email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
+          <div className="input-box">
+            <input
+              placeholder="Enter your email id:"
+              type="email"
+              name="email"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-            <div className="input-box">
-              <input
-                placeholder="Enter your password:"
-                type="password"
-                name="password"
-                id="password"
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
+          <div className="input-box">
+            <input
+              placeholder="Enter your password:"
+              type="password"
+              name="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-            <div className="input-box">
-              <input
-                placeholder="Confirm password:"
-                type="password"
-                name="password"
-                id="confirm-password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </div>
-            <div className="input-box button">
-              <input
-                className="btn btn-primary"
-                type="submit"
-                value="Sign Up"
-              />
-            </div>
-            <div className="text">
-              <TryAgain />
-            </div>
-          </form>
-        </div>
+          <div className="input-box">
+            <input
+              placeholder="Confirm password:"
+              type="password"
+              name="password"
+              id="confirm-password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-box button">
+            <input className="btn btn-primary" type="submit" value="Sign Up" />
+          </div>
+          <div className="text">
+            <TryAgain />
+          </div>
+        </form>
+      </div>
       <Link className="text" to="/">
         Already Have an account? Login then.
       </Link>

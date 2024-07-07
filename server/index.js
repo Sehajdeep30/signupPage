@@ -5,12 +5,23 @@ const UserModel = require("./models/Users");
 const app = express();
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/Users?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect(
+  "mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/Users?retryWrites=true&w=majority&appName=Cluster0"
+);
 
 app.post("/register", (req, res) => {
-  UserModel.create(req.body)
-    .then((Users) => res.json(Users))
-    .catch((err) => res.json(err));
+  const { name, num, email, password } = req.body;
+  UserModel.findOne({ email: email })
+    .then((user) => {
+      if (user) {
+        res.json("Account Already Exists");
+      } else {
+        UserModel.create(req.body)
+          .then((Users) => res.json(Users))
+          .catch((err) => res.json(err));
+      }
+    })
+    .catch((err) => console.log(err));
 });
 
 app.post("/login", (req, res) => {
