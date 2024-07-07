@@ -10,7 +10,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  let isPasswordConfirmed = confirmPassword === password;
+  const isPasswordConfirmed = confirmPassword === password;
 
   const submitHandle = (e) => {
     if (isPasswordConfirmed) {
@@ -41,11 +41,7 @@ function SignUp() {
 
   function TryAgain() {
     if (!isPasswordConfirmed) {
-      return (
-        <>
-          <h3>Passwords Don't Match</h3>
-        </>
-      );
+      return <h3>Passwords Don't Match</h3>;
     } else {
       return null;
     }
@@ -53,77 +49,66 @@ function SignUp() {
 
   return (
     <>
-    <h2 className="head">Sign Up</h2>
       <div className="background">
         <div className="signup-container">
           <form className="form-example" onSubmit={submitHandle}>
             <div className="form-group">
-              <label htmlFor="name">Enter your name: </label>
+              <label htmlFor="name">Enter your name:</label>
               <input
                 className="form-control"
                 type="text"
                 name="name"
                 id="name"
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="num">Enter your Mobile Number: </label>
+              <label htmlFor="num">Enter your Mobile Number:</label>
               <input
                 className="form-control"
                 type="text"
                 pattern="\d*"
                 maxLength="10"
                 minLength="10"
-                onChange={(e) => {
-                  setNum(e.target.value);
-                }}
+                onChange={(e) => setNum(e.target.value)}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Enter your Email ID: </label>
+              <label htmlFor="email">Enter your Email ID:</label>
               <input
                 className="form-control"
                 type="email"
                 name="email"
                 id="email"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Enter your password: </label>
+              <label htmlFor="password">Enter your password:</label>
               <input
                 className="form-control"
                 type="password"
                 name="password"
                 id="password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Confirm your password: </label>
+              <label htmlFor="password">Confirm your password:</label>
               <input
                 className="form-control"
                 type="password"
                 name="password"
-                id="password"
-                onChange={(e) => {
-                  setConfirmPassword(e.target.value);
-                }}
+                id="confirm-password"
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
             </div>
@@ -131,7 +116,8 @@ function SignUp() {
               <input className="btn btn-primary" type="submit" value="Submit" />
             </div>
             <div className="error-message">
-            <TryAgain /></div>
+              <TryAgain />
+            </div>
           </form>
         </div>
       </div>
