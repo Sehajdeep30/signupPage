@@ -113,7 +113,7 @@ function SignUp() {
               />
             </div>
             <div className="form-group">
-              <input className="btn btn-primary" type="submit" value="Submit" />
+              <input className="btn btn-primary" type="submit" value="Sign Up" />
             </div>
             <div className="error-message">
               <TryAgain />
