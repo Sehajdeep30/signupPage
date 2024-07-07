@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://signup-page-ebon.vercel.app/", // Frontend URL
+    origin: "*", // Frontend URL
     methods: ["POST", "GET"],
     credentials: true,
     optionsSuccessStatus: 200,
@@ -22,16 +22,12 @@ mongoose.connect(
 );
 
 app.post("/register", (req, res) => {
-  res.set('Access-Control-Allow-Origin', 'https://signup-page-ebon.vercel.app/');
-  req.set('Access-Control-Allow-Origin', 'https://signup-page-ebon.vercel.app/');
   UserModel.create(req.body)
     .then((Users) => res.json(Users))
     .catch((err) => res.json(err));
 });
 
 app.post("/login", (req, res) => {
-  res.set('Access-Control-Allow-Origin', 'https://signup-page-ebon.vercel.app/');
-  req.set('Access-Control-Allow-Origin', 'https://signup-page-ebon.vercel.app/');
   const { email, password } = req.body;
   UserModel.findOne({ email: email })
     .then((user) => {
