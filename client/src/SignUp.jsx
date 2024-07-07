@@ -17,7 +17,7 @@ function SignUp() {
       axios.defaults.withCredentials = true;
       e.preventDefault();
       axios
-        .post("https://signup-page-api.vercel.app/register", {
+        .post("https://signuppage-api.onrender.com/register", {
           name,
           num,
           email,
