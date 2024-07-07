@@ -7,12 +7,12 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    // origin: "*", // Frontend URL
-    // methods: ["POST", "GET"],
-    // credentials: true,
+    origin: "*", // Frontend URL
+    methods: ["POST", "GET"],
+    credentials: true,
     optionsSuccessStatus: 200,
-    // allowedHeaders: ["Content-Type", "Authorization"],
-    // allowedOrigin : "https://signup-page-ebon.vercel.app/"
+    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedOrigin : "https://signup-page-ebon.vercel.app/"
 
   })
 );

@@ -14,6 +14,7 @@ function SignUp() {
 
   const submitHandle = (e) => {
     if (isPasswordConfirmed) {
+      axios.defaults.withCredentials = true;
       e.preventDefault();
       axios
         .post("https://signup-page-api.vercel.app/register", {
@@ -112,7 +113,11 @@ function SignUp() {
               />
             </div>
             <div className="form-group">
-              <input className="btn btn-primary" type="submit" value="Sign Up" />
+              <input
+                className="btn btn-primary"
+                type="submit"
+                value="Sign Up"
+              />
             </div>
             <div className="error-message">
               <TryAgain />
