@@ -44,6 +44,6 @@ app.post("/login", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("Server is Running");
 });
