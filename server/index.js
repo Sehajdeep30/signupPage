@@ -5,17 +5,17 @@ const UserModel = require("./models/Users");
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*", // Frontend URL
-    methods: ["POST", "GET"],
-    credentials: true,
-    optionsSuccessStatus: 200,
-    allowedHeaders: ["Content-Type", "Authorization"],
-    allowedOrigin : "https://signup-page-ebon.vercel.app/"
+// app.use(
+//   cors({
+//     origin: "*", // Frontend URL
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//     optionsSuccessStatus: 200,
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     allowedOrigin : "https://signup-page-ebon.vercel.app/"
 
-  })
-);
+//   })
+// );
 mongoose.connect(
   "mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   { useNewUrlParser: true, useUnifiedTopology: true }

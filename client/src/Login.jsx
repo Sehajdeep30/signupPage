@@ -11,13 +11,13 @@ function Login() {
 
   const submitHandle = (e) => {
     e.preventDefault();
-    axios.defaults.withCredentials = true;
+    // axios.defaults.withCredentials = true;
     axios
       .post("https://signuppage-api.onrender.com/login", { email, password })
       .then((response) => {
         if (response.data === "Success") {
           navigate("/home");
-        } else {
+        } else {  
           setAuthentication(response.data);
         }
       })

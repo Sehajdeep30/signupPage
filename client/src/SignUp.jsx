@@ -14,7 +14,6 @@ function SignUp() {
 
   const submitHandle = (e) => {
     if (isPasswordConfirmed) {
-      axios.defaults.withCredentials = true;
       e.preventDefault();
       axios
         .post("https://signuppage-api.onrender.com/register", {
