@@ -26,11 +26,12 @@ function Login() {
 
   return (
     <>
-      <div>
-        <form class="form-example" onSubmit={submitHandle}>
+      <div class = "box">
+        <form class="form-group" onSubmit={submitHandle}>
           <div class="form-example">
             <label for="email">Enter your email: </label>
             <input
+            class="form-control"
               type="email"
               name="email"
               id="email"
@@ -40,9 +41,10 @@ function Login() {
               required
             />
           </div>
-          <div class="form-example">
+          <div class="form-group">
             <label for="password">Enter your password: </label>
             <input
+            class="form-control"
               type="password"
               name="password"
               id="password"
@@ -52,8 +54,8 @@ function Login() {
               required
             />
           </div>
-          <div class="form-example">
-            <input type="submit" value="Login" />
+          <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Login" />
           </div>
         </form>
       </div>

@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #312f2f;
 }
 
 .card {
@@ -11,4 +12,12 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.box{
+  background-color: #afd4d6;
+  border-style: outset;
+  text-align: center;
+  padding: 2px;
+
 }
