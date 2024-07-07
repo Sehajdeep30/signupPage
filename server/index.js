@@ -1,25 +1,11 @@
 const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
 const UserModel = require("./models/Users");
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://signup-page-ebon.vercel.app", // Frontend URL
-    methods: ["POST", "GET"],
-    credentials: true,
-    optionsSuccessStatus: 200,
-    allowedHeaders: ["Content-Type", "Authorization"],
-    allowedOrigin : "https://signup-page-ebon.vercel.app"
 
-  })
-);
-mongoose.connect(
-  "mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/Users?retryWrites=true&w=majority&appName=Cluster0",
-  // { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect("mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/Users?retryWrites=true&w=majority&appName=Cluster0");
 
 app.post("/register", (req, res) => {
   UserModel.create(req.body)
@@ -44,6 +30,6 @@ app.post("/login", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.listen(3001, () => {
-  console.log("Server is Running");
-});
+app.listen(process.env.PORT || 3000);
+
+module.exports = app;
