@@ -26,9 +26,9 @@ function SignUp() {
           console.log("Post Successful");
           if (response != "Account Already Exists") {
             navigate("/signedup");
-          }
-          else{
-            navigate("/signup")
+          } else {
+            navigate("/signup");
+            alert("Account Already Exists");
           }
         })
         .catch((e) => {
