@@ -11,7 +11,6 @@ function Login() {
 
   const submitHandle = (e) => {
     e.preventDefault();
-    axios.defaults.withCredentials = true;
     axios
       .post("https://signup-page-api.vercel.app/login", { email, password })
       .then((response) => {

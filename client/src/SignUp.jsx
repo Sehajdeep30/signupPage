@@ -14,7 +14,6 @@ function SignUp() {
 
   const submitHandle = (e) => {
     if (isPasswordConfirmed) {
-      axios.defaults.withCredentials = true;
       e.preventDefault();
       axios
         .post("https://signup-page-api.vercel.app/register", {
