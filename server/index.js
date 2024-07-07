@@ -7,11 +7,13 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://signup-page-brown.vercel.app", // Frontend URL
+    origin: "https://signup-page-ebon.vercel.app/", // Frontend URL
     methods: ["POST", "GET"],
     credentials: true,
     optionsSuccessStatus: 200,
     allowedHeaders: ["Content-Type", "Authorization"],
+    allowedOrigin : "https://signup-page-ebon.vercel.app/"
+
   })
 );
 mongoose.connect(

@@ -12,7 +12,7 @@ function Login() {
     axios.defaults.withCredentials = true;
     e.preventDefault();
     axios
-      .post("https://signup-page-api2.vercel.app/login", { email, password })
+      .post("https://signup-page-api.vercel.app/login", { email, password })
       .then((response) => {
         if (response.data == "Success") {
           navigate("/home");
