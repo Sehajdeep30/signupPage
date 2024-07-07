@@ -40,7 +40,7 @@ function SignUp() {
 
   function TryAgain() {
     if (!isPasswordConfirmed) {
-      return <h3>Passwords Don't Match</h3>;
+      return <p>Passwords Don't Match</p>;
     } else {
       return null;
     }
@@ -48,38 +48,35 @@ function SignUp() {
 
   return (
     <>
-      <div className="background">
-        <div className="signup-container">
-          <form className="form-example" onSubmit={submitHandle}>
-            <div className="form-group">
-              <label htmlFor="name">Enter your name:</label>
+      <div className="wrapper">
+        <h2>Register Page</h2>
+          <form onSubmit={submitHandle}>
+            <div className="input-box">
               <input
-                className="form-control"
                 type="text"
                 name="name"
                 id="name"
+                placeholder="Enter your name:"
                 onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="num">Enter your Mobile Number:</label>
+            <div className="input-box">
               <input
-                className="form-control"
                 type="text"
                 pattern="\d*"
                 maxLength="10"
                 minLength="10"
+                placeholder="Enter your mobile number:"
                 onChange={(e) => setNum(e.target.value)}
                 required
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Enter your Email ID:</label>
+            <div className="input-box">
               <input
-                className="form-control"
+                placeholder="Enter your email id:"
                 type="email"
                 name="email"
                 id="email"
@@ -88,10 +85,9 @@ function SignUp() {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="password">Enter your password:</label>
+            <div className="input-box">
               <input
-                className="form-control"
+                placeholder="Enter your password:"
                 type="password"
                 name="password"
                 id="password"
@@ -100,10 +96,9 @@ function SignUp() {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="password">Confirm your password:</label>
+            <div className="input-box">
               <input
-                className="form-control"
+                placeholder="Confirm password:"
                 type="password"
                 name="password"
                 id="confirm-password"
@@ -111,20 +106,19 @@ function SignUp() {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="input-box button">
               <input
                 className="btn btn-primary"
                 type="submit"
                 value="Sign Up"
               />
             </div>
-            <div className="error-message">
+            <div className="text">
               <TryAgain />
             </div>
           </form>
         </div>
-      </div>
-      <Link className="link" to="/">
+      <Link className="text" to="/">
         Already Have an account? Login then.
       </Link>
     </>

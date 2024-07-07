@@ -1,13 +1,17 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./SignUp.css";
 
 function SignedUp() {
-
   return (
     <>
-    <h3>Signup Successful!!</h3>
-      <Link to = "/">
-      Go back to log in page.
-      </Link>
+      <div className="wrapper">
+        <h3>Signup Successful!!</h3>
+        <div className="input-box button">
+          <Link to="/" className="link">
+            Go back to log in page.
+          </Link>
+        </div>
+      </div>
     </>
   );
 }
