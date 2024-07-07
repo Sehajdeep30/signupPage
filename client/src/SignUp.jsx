@@ -16,7 +16,7 @@ function SignUp() {
     if (isPasswordConfirmed) {
       e.preventDefault();
       axios
-        .post("https://signuppage-api.onrender.com/register", {
+        .post("https://signup-page-api.vercel.app/register", {
           name,
           num,
           email,

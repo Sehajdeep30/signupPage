@@ -13,7 +13,7 @@ function Login() {
     e.preventDefault();
     // axios.defaults.withCredentials = true;
     axios
-      .post("https://signuppage-api.onrender.com/login", { email, password })
+      .post("https://signup-page-api.vercel.app/login", { email, password })
       .then((response) => {
         if (response.data === "Success") {
           navigate("/home");
