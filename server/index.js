@@ -22,12 +22,14 @@ mongoose.connect(
 );
 
 app.post("/register", (req, res) => {
+  res.set('Access-Control-Allow-Origin', 'https://signup-page-ebon.vercel.app/');
   UserModel.create(req.body)
     .then((Users) => res.json(Users))
     .catch((err) => res.json(err));
 });
 
 app.post("/login", (req, res) => {
+  res.set('Access-Control-Allow-Origin', 'https://signup-page-ebon.vercel.app/');
   const { email, password } = req.body;
   UserModel.findOne({ email: email })
     .then((user) => {
