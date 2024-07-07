@@ -18,7 +18,7 @@ app.use(
 );
 mongoose.connect(
   "mongodb+srv://sehajdeepsinghkhalsa:gv9KpiA0Z4AnqrqX@cluster0.gfmxypt.mongodb.net/Users?retryWrites=true&w=majority&appName=Cluster0",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  // { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 app.post("/register", (req, res) => {

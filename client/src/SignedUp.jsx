@@ -5,7 +5,7 @@ function SignedUp() {
   return (
     <>
     <h3>Signup Successful!!</h3>
-      <Link to = "">
+      <Link to = "/">
       Go back to log in page.
       </Link>
     </>
