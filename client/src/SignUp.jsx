@@ -27,8 +27,8 @@ function SignUp() {
           if (response != "Account Already Exists") {
             navigate("/signedup");
           } else {
-            navigate("/signup");
             alert("Account Already Exists");
+            navigate("/signup");
           }
         })
         .catch((e) => {
